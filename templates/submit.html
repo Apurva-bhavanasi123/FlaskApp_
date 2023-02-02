@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<script>
+function download() {
+var text = "{{ file_cont}}";
+    var filename = "hello.txt";
+
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+</script>
+</head>
+   <body>
+<h2>Basic Details</h2>
+      <table border = 1>
+         {% for post in result %}
+		{% for key,vale in post.items() %}
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ vale }} </td>
+            </tr>
+{% endfor %}
+         {% endfor %}
+
+      </table>
+<textarea id="text-val" rows="4">{{file_cont}}</textarea><br/>
+<input type="button" id="dwn-btn" value="Download text file" onclick="download()"/>
+  </body>
+</html>

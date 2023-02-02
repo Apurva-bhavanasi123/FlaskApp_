@@ -1,0 +1,211 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+     function presses2(){
+	  console.log("here");
+	  $("#signuppage").hide();
+		 $("#loginpage").show();
+		 }
+	  function presses(){
+	  console.log("here");
+	  $("#signuppage").show();
+		 $("#loginpage").hide();
+		 }
+    </script>
+<script>
+function init() {
+  document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+}
+
+function handleFileSelect(event) {
+  const reader = new FileReader()
+  reader.onload = handleFileLoad;
+  reader.readAsText(event.target.files[0])
+}
+
+function handleFileLoad(event) {
+  console.log(event);
+  document.getElementById('fileContent').textContent = event.target.result;
+document.getElementById('files').value = event.target.result;
+}
+</script>
+	<style>
+      iframe[iframetag] {
+         border: none;
+		 height:100%;
+		 width:100%;
+      }
+	  .container {
+  font-family: arial;
+  font-size: 24px;
+  margin: 25px;
+  width: 350px;
+  height: 200px;
+  outline: dashed 1px black;
+  background-color:pink;
+  
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  /* Center horizontally*/
+  margin: 0 auto;
+}
+	  .button1 {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+   </style>
+<style>
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color:#6abadeba;
+    font-family: 'Arial';
+}
+.login{
+        width: 382px;
+        overflow: hidden;
+        margin: auto;
+		
+        margin: 20 0 0 450px;
+        padding: 80px;
+        background: #23463f;
+        border-radius: 15px ;
+
+}
+h2{
+    text-align: center;
+    color: #277582;
+    padding: 20px;
+}
+label{
+    color: #08ffd1;
+    font-size: 17px;
+}
+#Uname{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#Pass{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+
+}
+#log{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;
+
+
+}
+span{
+    color: white;
+    font-size: 17px;
+}
+a{
+    float: right;
+    background-color: grey;
+}
+</style>
+  </head>
+
+  <body onload="init()">
+  
+  <div id="total">
+  <div  class="container>
+  <div class="child>
+<input type="submit" class="button1" name="submit" id="signup1" value="Signup" onclick="presses()">
+
+        
+<input type="submit" name="login" class="button1" id="login1" value="login" onclick="presses2()">
+        </div>
+		</div>
+  <div id="loginpage">
+     <h2>Login Page</h2><br>
+    <div class="login">
+    <form id="login" method='post' action="/">
+
+
+   <label><b>User Name
+        </b>
+        </label>
+        <input type="text" name="Uname" id="UnameLogin" placeholder="Username">
+        <br><br>          
+		<label><b>Password
+        </b>
+        </label>
+        <input type="Password" name="Pass" id="PassLogin" placeholder="Password">
+        <br><br>
+        <input type="submit" name="Login" id="loginsubmit" value="login" class="button1">
+        <br><br>
+    </form>
+</div>
+  </div>
+  
+  <div id="signuppage" style="display:none">
+    <h2>Signup Page</h2><br>
+    <div class="login">
+    <form id="signup" method='post' action="/">
+<label><b>First Name
+        </b>
+        </label>
+        <input type="text" name="fname" id="fname" placeholder="First name">
+        <br><br>
+<label><b>Last Name
+        </b>
+        </label>
+        <input type="text" name="lname" id="lname" placeholder="Last name">
+        <br><br>
+<label><b>Email
+        </b>
+        </label>
+        <input type="text" name="email" id="email" placeholder="email">
+        <br><br>
+
+   <label><b>User Name
+        </b>
+        </label>
+        <input type="text" name="Uname" id="Uname" placeholder="Username">
+        <br><br>
+        <label><b>Password
+        </b>
+                </label>
+        <input type="Password" name="Pass" id="Pass" placeholder="Password">
+        <br><br>
+
+<label>File Upload</label>
+
+<pre id="fileContent"></pre><br><br>
+<input id="fileInput" type="file" name="filename" /><br><br>
+  <input type="text" name="filecont" id="files" placeholder="file">
+        <input type="submit" name="signup" id="submitsignup" value="Signup" class="button1">
+        <br><br>
+    </form>
+  </div>
+  
+</div>
+ </body>
+	 
+</html>

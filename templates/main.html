@@ -1,0 +1,79 @@
+<html>
+  <head>
+   
+    <script>
+     function presses2(){
+	  console.log("here");
+	  $("#signuppage").hide();
+		 $("#loginpage").show();
+		 }
+	  function presses(){
+	  console.log("here");
+	  $("#signuppage").show();
+		 $("#loginpage").hide();
+		 }
+    </script>
+	<style>
+      iframe[iframetag] {
+         border: none;
+		 height:100%;
+		 width:100%;
+      }
+	  .container {
+  font-family: arial;
+  font-size: 24px;
+  margin: 25px;
+  width: 350px;
+  height: 200px;
+  outline: dashed 1px black;
+  background-color:pink;
+  
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  /* Center horizontally*/
+  margin: 0 auto;
+}
+	  .button1 {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+   </style>
+
+  </head>
+
+  <body>
+  
+  <div id="total">
+  <div  class="container>
+  <div class="child>
+<input type="submit" class="button1" name="submit" id="signup1" value="Signup1" onclick="presses()">
+
+        
+<input type="submit" name="login" class="button1" id="login1" value="login1" onclick="presses2()">
+        </div>
+		</div>
+  <div id="loginpage">
+    <div class="green"><iframe src="index.html" iframetag></iframe></div>
+  </div>
+  
+  <div id="signuppage" style="display:none">
+    <div class="blue"><iframe src="signup.html" iframetag></iframe></div>
+  </div>
+  
+</div>
+ </body>
+	 
+</html>
+

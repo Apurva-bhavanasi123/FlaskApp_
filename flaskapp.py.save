@@ -1,0 +1,30 @@
+from flask import *
+import sqlite3
+app = Flask(__name__)
+
+def get_db_connection():
+    conn = sqlite3.connect('./home/ubuntu/flaskapp/users.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+@app.route('/',methods=['GET','POST'])
+def hello_world():
+    if(request.method=='GET'):
+        return  render_template('index.html')
+    else:
+        conn = get_db_connection()
+        posts = conn.execute('SELECT * FROM users').fetchall()
+        conn.close()
+        resp=request.form
+	print(posts)
+        #app.logger.info(request.form.get['Uname'])
+        return render_template('submit.html',result=resp)
+
+@app.route('/countme/<input_str>')
+def count_me(input_str):
+    return str(len(input_str))
+
+if __name__ == '__main__':
+  app.run()
+
+
+
